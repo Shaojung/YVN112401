@@ -2,12 +2,14 @@ package com.example.yvtc.yvn112401;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.net.Uri;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -47,6 +49,13 @@ public class MainActivity extends AppCompatActivity
             return;
         }
         mLocationManager.removeUpdates(this);
+    }
+
+    public void click2(View v)
+    {
+        Uri uri = Uri.parse("geo:24.930916,121.1716999");
+        Intent it = new Intent(Intent.ACTION_VIEW, uri);
+        startActivity(it);
     }
 
     public void click1(View v) {
